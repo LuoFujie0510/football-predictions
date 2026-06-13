@@ -12,8 +12,8 @@ echo "📦 提交变更..."
 git add data/data.json
 git commit -m "更新 $(date +%Y-%m-%d) 预测数据" || echo "（无变更）"
 
-echo "🚀 推送到 GitHub..."
-git push origin main
+echo "🚀 推送到 GitHub (SSH)..."
+GIT_SSH_COMMAND="ssh -o StrictHostKeyChecking=no" git push origin main
 
 echo ""
 echo "✅ 完成！1-2分钟后访问 https://LuoFujie0510.github.io/football-predictions/"
