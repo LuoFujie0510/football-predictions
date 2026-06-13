@@ -156,7 +156,7 @@ def main():
         if is_prediction(f):
             version = 'C' if is_c_version(f) else 'D'
             matches = parse_matches_from_text(text)
-            enriched = [{'header': m['header'], **extract_info_from_match(m['content']), 'full_text': m['content']} for m in matches]
+            enriched = [{'header': m['header'], 'home': m['home'], 'away': m['away'], **extract_info_from_match(m['content']), 'full_text': m['content']} for m in matches]
             
             dates[date]['predictions'][version] = {
                 'filename': f,
