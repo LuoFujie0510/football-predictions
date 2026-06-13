@@ -1,0 +1,157 @@
+/* 球探笔记 — 竞彩足球预测网站样式 */
+:root {
+  --bg: #0f1117;
+  --bg-card: #1a1d27;
+  --bg-card-hover: #222636;
+  --border: #2a2d3a;
+  --text: #e0e0e0;
+  --text-secondary: #8890a4;
+  --accent: #4fc3f7;
+  --accent2: #ffb74d;
+  --win: #66bb6a;
+  --lose: #ef5350;
+  --draw: #ffa726;
+  --tag-bg: #252836;
+  --radius: 10px;
+  --shadow: 0 2px 12px rgba(0,0,0,0.3);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.container { max-width: 960px; margin: 0 auto; padding: 0 20px; }
+
+/* Header */
+.site-header {
+  background: var(--bg-card);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 0;
+  text-align: center;
+}
+.logo { font-size: 1.8rem; letter-spacing: 2px; }
+.subtitle { color: var(--text-secondary); font-size: 0.95rem; margin-top: 6px; }
+
+/* Stats bar */
+.stats-bar {
+  display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;
+  padding: 20px 0; color: var(--text-secondary); font-size: 0.9rem;
+}
+.stats-bar span { background: var(--tag-bg); padding: 4px 14px; border-radius: 20px; }
+.stats-bar .count { color: var(--accent); font-weight: 600; }
+
+/* Date grid */
+.date-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 10px 0 40px;
+}
+
+.date-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.date-card:hover { background: var(--bg-card-hover); transform: translateY(-2px); box-shadow: var(--shadow); }
+.date-card .date { font-size: 1.2rem; font-weight: 700; color: var(--accent); }
+.date-card .day { color: var(--text-secondary); font-size: 0.85rem; margin-left: 8px; }
+.date-card .meta { margin-top: 10px; font-size: 0.85rem; color: var(--text-secondary); display: flex; gap: 12px; flex-wrap: wrap; }
+.date-card .meta span { display: flex; align-items: center; gap: 4px; }
+.date-card .meta .badge { font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; }
+.badge-c { background: #1b5e20; color: #81c784; }
+.badge-d { background: #4a148c; color: #ce93d8; }
+.badge-both { background: #0d47a1; color: #90caf9; }
+
+/* Detail view */
+.back-btn {
+  background: var(--tag-bg); color: var(--text); border: 1px solid var(--border);
+  padding: 8px 20px; border-radius: 8px; cursor: pointer; font-size: 0.95rem;
+  margin: 20px 0; transition: background 0.2s;
+}
+.back-btn:hover { background: var(--border); }
+
+.detail-header { margin-bottom: 24px; }
+.detail-header h2 { font-size: 1.5rem; color: var(--accent); }
+.detail-header .date-meta { color: var(--text-secondary); font-size: 0.9rem; margin-top: 4px; }
+
+/* Tabs */
+.tabs { display: flex; gap: 4px; margin-bottom: 20px; flex-wrap: wrap; }
+.tab {
+  background: var(--tag-bg); color: var(--text-secondary); border: 1px solid var(--border);
+  padding: 8px 18px; border-radius: 8px 8px 0 0; cursor: pointer; font-size: 0.9rem;
+  transition: all 0.2s;
+}
+.tab.active { background: var(--bg-card); color: var(--accent); border-bottom-color: var(--bg-card); }
+.tab:hover:not(.active) { color: var(--text); }
+
+/* Match card */
+.match-card {
+  background: var(--bg-card); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 20px; margin-bottom: 16px;
+}
+.match-header { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; flex-wrap: wrap; }
+.match-header .teams { font-size: 1.15rem; font-weight: 700; }
+.match-header .teams .vs { color: var(--text-secondary); margin: 0 8px; }
+.match-header .league-tag {
+  font-size: 0.75rem; background: var(--tag-bg); padding: 3px 10px;
+  border-radius: 12px; color: var(--accent2);
+}
+
+.match-body { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; }
+.match-item { font-size: 0.9rem; }
+.match-item .label { color: var(--text-secondary); font-size: 0.8rem; display: block; margin-bottom: 2px; }
+.match-item .value { font-weight: 500; }
+
+.direction-tag {
+  display: inline-block; padding: 2px 12px; border-radius: 12px;
+  font-size: 0.85rem; font-weight: 600;
+}
+.dir-win { background: #1b5e20; color: #81c784; }
+.dir-draw { background: #e65100; color: #ffb74d; }
+.dir-lose { background: #b71c1c; color: #ef9a9a; }
+.dir-dual { background: #0d47a1; color: #90caf9; }
+
+.cold-low { color: #66bb6a; }
+.cold-mid { color: #ffa726; }
+.cold-high { color: #ef5350; }
+
+/* Review content */
+.review-section { margin-top: 20px; }
+.review-section h3 { color: var(--accent2); margin-bottom: 12px; }
+.review-text {
+  background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 20px; font-size: 0.9rem; line-height: 1.8; white-space: pre-wrap;
+  max-height: 600px; overflow-y: auto;
+}
+
+/* Footer */
+.site-footer {
+  text-align: center; padding: 30px 0; color: var(--text-secondary);
+  font-size: 0.8rem; border-top: 1px solid var(--border); margin-top: 40px;
+}
+.site-footer p { margin: 4px 0; }
+
+/* No data state */
+.empty-state {
+  text-align: center; padding: 60px 20px; color: var(--text-secondary);
+}
+.empty-state .icon { font-size: 3rem; margin-bottom: 16px; }
+
+/* Mobile */
+@media (max-width: 600px) {
+  .logo { font-size: 1.4rem; }
+  .date-grid { grid-template-columns: 1fr; }
+  .match-body { grid-template-columns: 1fr; }
+  .tabs { gap: 2px; }
+  .tab { padding: 6px 12px; font-size: 0.8rem; }
+}

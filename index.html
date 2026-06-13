@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>球探笔记 — 竞彩足球预测与复盘</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="container">
+    <h1 class="logo">⚽ 球探笔记</h1>
+    <p class="subtitle">竞彩足球每日预测 · 结构化复盘 · 数据驱动</p>
+  </div>
+</header>
+
+<main class="container" id="app">
+  <!-- Home: date list -->
+  <section id="home-view">
+    <div class="stats-bar" id="stats-bar"></div>
+    <div class="date-grid" id="date-grid"></div>
+  </section>
+
+  <!-- Detail: single date -->
+  <section id="detail-view" style="display:none">
+    <button class="back-btn" onclick="showHome()">← 返回</button>
+    <div id="detail-content"></div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p>数据来源：竞彩官网 · Flashscore · OddsPortal · API-Football</p>
+    <p>仅供分析参考，不构成投注建议</p>
+  </div>
+</footer>
+
+<script src="js/app.js"></script>
+</body>
+</html>
