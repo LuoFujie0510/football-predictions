@@ -42,9 +42,8 @@ def parse_matches_from_text(text):
     
     # Look for match header patterns
     header_patterns = [
-        r'[周一二三四五六日]\d{3}\s+\S+\s+(.+?)\s+[vV][sS]\s+(.+?)(?:\s+\d|$)',
+        r'周[一二三四五六日]\s*\d{3}\s+\S+\s+(.+?)\s+[vV][sS]\s+(.+?)(?:\s+\d|$)',
         r'【(\d{3})】\s*(.+?)\s+[vV][sS]\s+(.+)',
-        r'周六\d{3}\s+\S+\s+(.+?)\s+[vV][sS]\s+(.+?)(?:\s+\d|$)',
     ]
     
     current_match = None
